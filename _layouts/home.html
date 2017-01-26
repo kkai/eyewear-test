@@ -1,0 +1,66 @@
+---
+layout: default
+---
+	<!-- Header -->
+		<header id="header" class="alt">
+						<h1><a href="index.html">Open Eyewear</a></h1>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+		</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<div class="inner">
+							<h2>Menu</h2>
+							<ul class="links">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="publications.html">Publications</a></li>
+							</ul>
+							<a href="#" class="close">Close</a>
+						</div>
+					</nav>
+
+
+<!-- Banner -->
+<section id="banner">
+	<div class="inner">
+		<div class="logo"><span class="icon fa-eye"></span></div>
+		<h2>open eyewear</h2>
+    <p>Amplifying the Human Mind</p>
+		</div>
+</section>
+
+{{ content }}
+
+<!-- Wrapper -->
+<section id="wrapper">
+{% for post in site.posts %}
+  {% assign style =  forloop.index | modulo:2 %}
+  <section id="{{forloop.index}}" class="wrapper {% if style == 0%} alt {% endif %} spotlight style{{forloop.index | modulo:3 | plus:1}}">
+    <div class="inner">
+		<a href="#" class="image"><img src="images/{{post.picture}}.jpg" alt="" /></a>
+		<div class="content">
+		<h2 class="major">{{ post.title | escape }} {{style}} {{forloop.index | modulo:3 | plus:1}}  </h2>
+    <p>{{post.summary}}</p>
+    <a href="{{ post.url | relative_url }}" class="special">Read more</a>
+		</div>
+  </div>
+ </section>
+  {% endfor %}
+</section>
+
+<!-- Four -->
+<section id="four" class="wrapper alt style1">
+<div class="inner">
+<h2 class="major">Background</h2>
+<p> This project is lead by <a href="http://kaikunze.de/"> Kai Kunze </a>.
+  It's supported by the <a href="https://www.jst.go.jp">Japansese Science and Technology Agency</a>,
+  more specifically by the <a href="https://www.jst.go.jp/kisoken/presto/en/"> JST Presto program </a>.
+  
+  </br><img src="images/presto.png" alt="" />
+
+<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+</p>
+</div>
+</section>
