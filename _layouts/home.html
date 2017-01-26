@@ -41,7 +41,7 @@ layout: default
     <div class="inner">
 		<a href="#" class="image"><img src="images/{{post.picture}}.jpg" alt="" /></a>
 		<div class="content">
-		<h2 class="major">{{ post.title | escape }} {{style}} {{forloop.index | modulo:3 | plus:1}}  </h2>
+		<h2 class="major">{{ post.title | escape }} </h2>
     <p>{{post.summary}}</p>
     <a href="{{ post.url | relative_url }}" class="special">Read more</a>
 		</div>
